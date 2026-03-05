@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Learning Journal</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Smythe&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- accessibility consider link -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <!-- my nav panel -->
+    <header class="site-header">
+      <div class="brand">
+        <a
+          class="brand-link"
+          href="index.html"
+          aria-label="My Learning Journal home"
+        >
+          <img src="logo.png" alt="My Learning Journal" class="brand-logo" />
+          <span class="brand-title">My Learning Journal</span>
+        </a>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="about.html">About me</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="site-main">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">My Learning Journey</h1>
+        <p class="date">February 27, 2026</p>
+        <p>
+          I’m a self-driven learner exploring web development step by step. This
+          space is where I document what I build, what I struggle with, and how
+          I gradually improve through consistent practice.
+        </p>
+        <p>
+          Over the past months, I’ve been teaching myself HTML, CSS, and
+          JavaScript, focusing not just on making things work, but on
+          understanding structure, accessibility, and responsive design. This
+          website itself is part of that journey — a small but meaningful
+          exercise in thinking carefully and building intentionally.
+        </p>
+      </section>
+
+      <section class="posts" aria-labelledby="posts-title">
+        <h2 id="posts-title">Recent Posts</h2>
+
+        <article class="post-card">
+          <a href="post-1.html" class="post-link">
+            <img
+              src="article-image-01.png"
+              alt="Screenshot of my first learning setup"
+              class="post-image"
+              loading="lazy"
+            />
+
+            <div class="post-content">
+              <p class="post-date">
+                <time datetime="2026-02-27">February 27, 2026</time>
+              </p>
+
+              <h3 class="post-title">Starting My Front-End Journey</h3>
+
+              <p class="post-excerpt">
+                Today I officially began teaching myself front-end development.
+                I felt excited and slightly overwhelmed, but motivated to build
+                something real from scratch. This marks the beginning of a long
+                but meaningful journey.
+              </p>
+            </div>
+          </a>
+        </article>
+
+        <article class="post-card">
+          <a href="post-2.html" class="post-link">
+            <img
+              src="article-image-02.png"
+              alt="Working on my first responsive layout"
+              class="post-image"
+              loading="lazy"
+            />
+
+            <div class="post-content">
+              <p class="post-date">
+                <time datetime="2026-03-03">March 3, 2026</time>
+              </p>
+
+              <h3 class="post-title">Understanding Responsive Design</h3>
+
+              <p class="post-excerpt">
+                I started experimenting with mobile-first layouts and media
+                queries. It looked simple at first, but thinking through
+                structure and accessibility made me realise how much depth there
+                is.
+              </p>
+            </div>
+          </a>
+        </article>
+
+        <article class="post-card">
+          <a href="post-3.html" class="post-link">
+            <img
+              src="article-image-03.png"
+              alt="Refactoring and improving layout structure"
+              class="post-image"
+              loading="lazy"
+            />
+
+            <div class="post-content">
+              <p class="post-date">
+                <time datetime="2026-03-10">March 10, 2026</time>
+              </p>
+
+              <h3 class="post-title">Refactoring for Better Structure</h3>
+
+              <p class="post-excerpt">
+                This week I revisited my earlier code and improved the
+                structure. I focused on semantic HTML, cleaner layout patterns,
+                and small accessibility improvements.
+              </p>
+            </div>
+          </a>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year">2026</span> My Learning Journal</p>
+    </footer>
+  </body>
+</html>
