@@ -1,3 +1,4 @@
+/* accessible skip link */
 .skip-link {
   position: absolute;
   left: -999px;
@@ -13,6 +14,12 @@
   z-index: 1000;
 }
 
+/* 
+Apply border-box sizing to all elements and their pseudo-elements.
+This ensures that padding and border are included inside the element’s width and height,
+making layout calculations more predictable and preventing elements from overflowing
+their containers.
+*/
 *,
 *::before,
 *::after {
@@ -21,6 +28,7 @@
 
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: "Google Sans Flex", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -39,36 +47,43 @@ body {
 }
 
 .brand-title {
-    font-size: 1rem;
+  font-size: 1rem;
 }
-/* my header scetion style */
+
 .nav-list {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
 }
 
 .site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
 }
 
 .brand-link {
   display: flex;
   align-items: center;
+  min-width: 0;
   gap: 0.5rem;
 }
 
-.nav-list li{
-text-decoration: none;
-display: inline-block;
+.nav-list li {
+  text-decoration: none;
 }
 
 .nav-list li a {
+  display: block;
   text-decoration: none;
   color: black;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
   font-size: 1rem;
 }
 
@@ -78,32 +93,103 @@ display: inline-block;
 }
 
 .brand a {
-    text-decoration: none;
-    color: black;
-    font-size: 1.5rem;
-    font-weight: bold;
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-/* first section main one */
 .hero {
-    background-image: url("article-image-hero.png");
-    background-size: cover;
-    background-position: center;
-    padding: 1.25rem;
-    color: white;
+  background-size: cover;
+  background-position: center;
+  padding: 1.25rem;
+  min-height: 100svh;
 }
 
-/* post area */
+.hero-home {
+  background-image: url("article-image-hero.png");
+  color: white;
+}
 
+.post-detail-image {
+  width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 3px;
+}
 .posts {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   padding: 1.25rem;
+  gap: 1.5rem;
+}
+
+.post-card,
+.post-link,
+.post-content {
+  width: 100%;
+}
+
+.post-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .post-card a {
   text-decoration: none;
   color: black;
+}
+
+.post-excerpt {
+  font-weight: lighter;
+}
+
+/* post-1 specific styles */
+#posts-title {
+  text-align: center;
+  width: 100%;
+  font-size: 1rem;
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    align-items: flex-start;
+  }
+
+  .brand-link {
+    flex-wrap: wrap;
+  }
+
+  .nav-list li a {
+    padding: 0.5rem;
+  }
+}
+
+.view-more-wrapper {
+  width: 100%;
+}
+
+.view-more {
+  text-align: center;
+}
+.view-more a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* footer */
+.site-footer {
+  padding: 1rem 1.25rem;
+  height: 6.5rem;
+  background-color: #202020;
+  color: white;
+  text-align: center;
 }
