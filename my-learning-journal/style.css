@@ -98,6 +98,11 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
 }
+ /* main content  */
+ .hero-title {
+  font-size: 2rem;
+ }
+
 
 .hero {
   background-size: cover;
@@ -105,7 +110,9 @@ body {
   padding: 1.25rem;
   min-height: 100svh;
 }
-
+.hero p {
+  font-weight: lighter;
+}
 .hero-home {
   background-image: url("article-image-hero.png");
   color: white;
@@ -126,6 +133,14 @@ body {
   gap: 1.5rem;
 }
 
+.posts time {
+  font-size: 0.875rem;;
+  font-weight: lighter;
+}
+
+.post-title {
+  font-size: 1.5rem;
+}
 .post-card,
 .post-link,
 .post-content {
@@ -152,6 +167,14 @@ body {
 #posts-title {
   text-align: center;
   width: 100%;
+  font-size: 1rem;
+}
+
+.post-body {
+  font-weight: 300;
+}
+
+.post-body h2 {
   font-size: 1rem;
 }
 
