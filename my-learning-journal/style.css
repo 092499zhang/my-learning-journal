@@ -1,4 +1,4 @@
-/* accessible skip link */
+/* Shared foundation */
 .skip-link {
   position: absolute;
   left: -999px;
@@ -14,12 +14,6 @@
   z-index: 1000;
 }
 
-/* 
-Apply border-box sizing to all elements and their pseudo-elements.
-This ensures that padding and border are included inside the element’s width and height,
-making layout calculations more predictable and preventing elements from overflowing
-their containers.
-*/
 *,
 *::before,
 *::after {
@@ -28,7 +22,6 @@ their containers.
 
 body {
   margin: 0;
-  overflow-x: hidden;
   font-family: "Google Sans Flex", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -38,12 +31,6 @@ body {
     "wdth" 100,
     "GRAD" 0,
     "ROND" 0;
-}
-
-.smythe-regular {
-  font-family: "Smythe", system-ui;
-  font-weight: 400;
-  font-style: normal;
 }
 
 .brand-title {
@@ -73,13 +60,11 @@ body {
   align-items: center;
   min-width: 0;
   gap: 0.5rem;
-}
-
-.nav-list li {
   text-decoration: none;
+  color: black;
 }
 
-.nav-list li a {
+.nav-link {
   display: block;
   text-decoration: none;
   color: black;
@@ -92,30 +77,55 @@ body {
   height: auto;
 }
 
-.brand a {
-  text-decoration: none;
-  color: black;
+.brand {
   font-size: 1.5rem;
   font-weight: bold;
 }
- /* main content  */
- .hero-title {
-  font-size: 2rem;
- }
 
+.page-content {
+  width: min(100% - 2.5rem, 70rem);
+  margin: 0 auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.site-main,
+.about-page {
+  padding-bottom: 3rem;
+}
 
 .hero {
   background-size: cover;
   background-position: center;
-  padding: 1.25rem;
-  min-height: 100svh;
+  min-height: 60svh;
+    padding: 2rem 1.25rem;
 }
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 1rem;
+}
+
 .hero p {
-  font-weight: lighter;
+  font-weight: 300;
+  max-width: 60ch;
 }
+
 .hero-home {
-  background-image: url("article-image-hero.png");
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("article-image-hero.png");
+  background-size: cover;
+  background-position: center;
   color: white;
+}
+
+.date,
+.post-date {
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
 }
 
 .post-detail-image {
@@ -124,27 +134,39 @@ body {
   margin: 1rem 0;
   border-radius: 3px;
 }
+
 .posts {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 1.25rem;
   gap: 1.5rem;
+  margin-top: 2.5rem;
 }
 
 .posts time {
-  font-size: 0.875rem;;
-  font-weight: lighter;
+  font-size: 0.875rem;
 }
 
+#posts-title,
 .post-title {
   font-size: 1.5rem;
 }
+
 .post-card,
 .post-link,
 .post-content {
   width: 100%;
+}
+
+.post-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+.post-link-static {
+  cursor: default;
 }
 
 .post-image {
@@ -152,30 +174,95 @@ body {
   width: 100%;
   max-width: 100%;
   height: auto;
-}
-
-.post-card a {
-  text-decoration: none;
-  color: black;
+  border-radius: 3px;
 }
 
 .post-excerpt {
-  font-weight: lighter;
+  font-weight: 300;
+  margin-bottom: 0;
 }
 
-/* post-1 specific styles */
 #posts-title {
   text-align: center;
   width: 100%;
-  font-size: 1rem;
 }
 
 .post-body {
   font-weight: 300;
+  max-width: 65ch;
 }
 
 .post-body h2 {
-  font-size: 1rem;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}
+
+.view-more-wrapper {
+  width: 100%;
+}
+
+.view-more {
+  text-align: center;
+  font-weight: 600;
+}
+
+.site-footer {
+  padding: 1rem 1.25rem;
+  min-height: 6.5rem;
+  background-color: #202020;
+  color: white;
+  text-align: center;
+}
+
+/* About page */
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.profile-picture {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.about-page p {
+  font-weight: 300;
+  max-width: 65ch;
+}
+
+.about-page h2 {
+  font-size: 1.5rem;
+}
+
+.profile {
+  margin: 0;
+}
+
+.about-text {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0;
+}
+
+.about-description {
+  margin: 0;
+}
+
+.about-section + .about-section {
+  margin-top: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
 }
 
 @media (max-width: 480px) {
@@ -187,32 +274,45 @@ body {
     flex-wrap: wrap;
   }
 
-  .nav-list li a {
+  .nav-link {
     padding: 0.5rem;
+  }
+
+  .hero-home {
+    padding: 2rem 1rem;
+  }
+
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .profile-picture {
+    max-width: 160px;
   }
 }
 
-.view-more-wrapper {
-  width: 100%;
+/* responsive design  */
+@media (min-width: 768px) {
+  .post-link {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
 }
 
-.view-more {
-  text-align: center;
+@media (min-width: 1024px) {
+  .post-body {
+    max-width: 70ch;
+  }
+.posts {
+  gap: 1.5rem;
 }
-.view-more a {
-  text-decoration: none;
-  color: black;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  font-weight: bold;
-  text-decoration: underline;
+    .post-link {
+    grid-template-columns: 1.2fr 2fr;
+  }
+  .hero {
+  padding: 2rem 1.25rem;
 }
-
-/* footer */
-.site-footer {
-  padding: 1rem 1.25rem;
-  height: 6.5rem;
-  background-color: #202020;
-  color: white;
-  text-align: center;
 }
